@@ -3,6 +3,24 @@ import PropTypes from "prop-types";
 
 class App extends React.Component {
   state = {
+    isLoading: true,
+    movies: []
+  };
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 5000);
+  }
+  render() {
+    const { isLoading } = this.state;
+    return <div>{isLoading ? "Loading..." : "We are ready"}</div>;
+  }
+}
+// https://chanspark.github.io/2017/11/28/ES6-%EA%BF%80%ED%8C%81.html
+/**
+ * #3 State
+ class App extends React.Component {
+   state = {
     count: 0
   };
   add = () => {
@@ -24,20 +42,21 @@ class App extends React.Component {
     console.log("rendered");
     return (
       <div>
-        <h1>The number is: {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>Minus</button>
+      <h1>The number is: {this.state.count}</h1>
+      <button onClick={this.add}>Add</button>
+      <button onClick={this.minus}>Minus</button>
       </div>
-    );
+      );
+    }
   }
-}
+  */
 
 /**
- * #2 JSX & Props
-function Food({ name, picture, rating }) {
-  return (
-    <div>
-      <h2>I like {name}</h2>
+   * #2 JSX & Props
+   function Food({ name, picture, rating }) {
+     return (
+       <div>
+       <h2>I like {name}</h2>
       <h4>{rating}/5.0</h4>
       <img src={picture} alt={name} />
     </div>
