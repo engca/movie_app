@@ -11,7 +11,17 @@ class App extends React.Component {
   minus = () => {
     this.setState(current => ({ count: current.count - 1 }));
   };
+  componentDidMount() {
+    console.log("mount");
+  }
+  componentDidUpdate() {
+    console.log("update");
+  }
+  componentWillUnmount() {
+    console.log("unmount");
+  }
   render() {
+    console.log("rendered");
     return (
       <div>
         <h1>The number is: {this.state.count}</h1>
