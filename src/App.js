@@ -1,7 +1,14 @@
 import React from "react";
+
+function App() {
+  return <span>something</span>;
+}
+
+/**
+ * 
 import PropTypes from "prop-types";
 import axios from "axios";
-import Movie from "./Movie";
+import Movie from "./components/Movie";
 import "./App.css";
 
 class App extends React.Component {
@@ -51,6 +58,8 @@ class App extends React.Component {
     );
   }
 }
+*/
+
 // https://chanspark.github.io/2017/11/28/ES6-%EA%BF%80%ED%8C%81.html
 /**
  * #3 State
